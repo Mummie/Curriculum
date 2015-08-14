@@ -32,6 +32,14 @@
 
 
     // code goes here ...
+    
+    $rock_paper_decision = array("Rock", "Paper", "Scissor");
+    $New_rock_paper_decision = array_rand($rock_paper_decision,1);
+    echo $New_rock_paper_decision;
+    
+    
+
+
 
     ?>
 </p>

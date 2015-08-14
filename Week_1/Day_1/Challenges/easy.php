@@ -18,7 +18,8 @@
           <?php
             $number = 3 // this came from the previous page as a post variable
 
-          	// code goes here ...
+          	strval($number);
+          	echo $number;
           ?>
         </p>
 	</body>

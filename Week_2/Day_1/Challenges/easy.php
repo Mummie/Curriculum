@@ -14,6 +14,12 @@
             <?php
 
           	    // code goes here ...
+          	    do {
+          	     $random_int = rand(1,7);
+          	     
+          	      echo $random_int . "\n";
+          	    }
+          	    while($random_int != 7);
 
             ?>
         </p>

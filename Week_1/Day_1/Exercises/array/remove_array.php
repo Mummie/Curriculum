@@ -18,6 +18,16 @@
             "Rasmus Lerdorf" // creator of php
         ];
         
+        foreach($teachers as $key=>$val){
+            $arr = [1,3,5];
+            if(in_array($key,$arr)){
+                unset($teachers[$key]);
+                
+            }
+        
+        }
+        
+       asort($teachers);
         print_r($teachers);
         
       ?>

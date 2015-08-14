@@ -19,9 +19,11 @@
                     'November',
                     'December'
                 );
-
-                // display correct Month Number and Month Name given the above array
-                // i.e. 1 - January
+                ksort($monthArray);
+                foreach($monthArray as $key => $val){
+                    echo "$key = $val \n";
+                    
+                }
 
             ?>
         </p>

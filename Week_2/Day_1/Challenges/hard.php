@@ -17,7 +17,16 @@
             <?php
 
 
+                
                 // code goes here ...
+              
+                $numbers_range = range(1,100);
+                foreach($numbers_range as $numbers){
+                    if($numbers % 3 == 0){
+                        $numbers++;
+                    }
+                }
+             print_r($numbers);
 
             ?>
         </p>

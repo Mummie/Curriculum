@@ -12,11 +12,11 @@
         */
        
         // food you are looking up
-        $food = '';
+        $food = 'orange';
 
         // Fruits
         if($food == "grape" || $food == "lemon" || $food == "orange"  || $food == "banana"){
-          $style = '#FF2424'; // redish color
+          $style = 'orange'; // redish color
         }
         // vegetables
         else if($food == "tomato" || $food == "carrot" || $food == "pumpkin"  || $food == "lettuce"){
