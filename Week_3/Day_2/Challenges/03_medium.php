@@ -15,7 +15,7 @@
              * Vince went to FL to buy some Mellow Mushroom, it costed him $106.50
              */
 
-            $state_tax = array('NC' => 0.07, 'NY' => .094, => 'FL' => 0.065);
+            $state_tax = array('NC' => 0.07, 'NY' => .094, 'FL' => 0.065);
             $people = array(
                 'Eric' => array('state' => 'NC', 'meal' => 74.10, 'food' => 'Bad Daddys'),
                 'Vince' => array('state' => 'FL', 'meal' => 100, 'food' => 'Mellow Mushroom'),
@@ -23,10 +23,28 @@
             );
 
             function calculateTax($meal_cost,$tax) {
-                $price = 0;
+               $priceTax = $meal_cost * $tax;
+                return $meal_cost + $priceTax;
 
-                return $price
+                
             }
+            
+            
+            
+            $meal_cost = $person['meal'];
+            
+            
+            
+            function dd($arg){
+                die(var_dump($arg));
+            }
+             foreach($people as $key => $person){
+                   echo $key . "went to" . $person['state'] . "to go to" . $person['food'];
+                   echo "<br />";
+                   echo calculateTax($person["meal"], $state_tax['state']);
+                   dd($meal_cost);
+                }
+            
 
 
 

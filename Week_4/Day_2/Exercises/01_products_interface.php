@@ -4,7 +4,7 @@
   </head>
   <body>
     <p>
-    <?
+    <?php
         /**
          * OVERVIEW:
          * Let's attempt to build a clone of Amazon.com
@@ -55,6 +55,35 @@
         ///////////////////////////
         // Put your code here!
         ///////////////////////////
+         interface Describable{
+          public function provideDescription();
+            
+          
+        }
+        
+        class Product implements Describable {
+          protected $name;
+          protected $price;
+          protected $brand;
+          protected $description;
+          
+          
+          public function __construct($name,$price,$brand,$description){
+            $this->name = $name;
+            $this->price = $price;
+            $this->brand = $brand;
+            $this->description = $description;
+          }
+          
+         public function provideDescription(){
+          return $this->description;
+         }
+        }
+        
+        
+        $hawaiian = new Product("Hawaiian T Shirt", 23.99, "Hang 10", "Shirt with flowers");
+        echo $hawaiian->provideDescription();
+      
         ?>
     </p>
   </body>

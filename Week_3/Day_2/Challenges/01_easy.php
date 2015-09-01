@@ -19,6 +19,24 @@
              $inputs = array(
                array('numbers' => range(0, 100))
              );
+           
+             
+             foreach($inputs as $val){
+                 foreach($val as $numbersArray){
+                     foreach ($numbersArray as $num){
+                     if($inputs % 3 == 0){
+                    echo "Fizz";
+             }
+             if($num % 5 == 0){
+                 echo "Buzz";
+             }
+             
+             if($num % 5 == 0 && $num % 3 == 0){
+                 echo "Fizz" . "Buzz";
+             }
+                     }
+                 }
+             }
 
         ?>
 

@@ -39,8 +39,35 @@
     ///////////////////////////
     // Put your code here!
     ///////////////////////////
-
-
+    class LivingThing{
+        
+        public $name;
+        public $health;
+             function __construct($name, $health){
+         $this->name = $name;
+         $this->health = $health;   
+        }
+       
+        public function isAlive(){
+        return ($this->health > 0);
+        
+    }
+    }
+    
+    $rat = new LivingThing("Rat", 5);
+    
+    
+    
+    $goblin = new LivingThing("Goblin", 30);
+    
+    
+    
+    $ogre = new LivingThing("Ogre", 80);   
+    
+    echo "<h3>Monsters!</h3>";
+    
+    
+    $monsters = array($rat,$goblin,$ogre);
     echo "<h3>Creating monsters with a constructor</h3>";
 
     foreach ($monsters as $monster) {

@@ -19,8 +19,15 @@
              *
              */
 
-                function 
-
+                function findHashtags($validString){
+                    $validString = array($validString);
+                    if($validString[0] == "#"){
+                        return true;
+                    }
+                }
+            
+            
+           echo  findHashtags("#words");
              $sentence = 'this #free is ##wild , .?!#word #can #young some#word ###keyword';
 
              $words = // find a php function that will turn a string into words

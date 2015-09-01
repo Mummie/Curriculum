@@ -4,7 +4,7 @@
   </head>
   <body>
     <p>
-    <?
+    <?php
         /**
          * OVERVIEW:
          * So, our boss gave us a call and hated the fact that 2 pieces of clothing had such
@@ -84,6 +84,86 @@
         ///////////////////////////
         // Put your code here!
         ///////////////////////////
+        
+        interface Describable {
+          public function provideDescription();
+          
+        }
+         abstract class Product implements Describable {
+           
+           
+           public function __construct($name,$price,$brand){
+             $this->name = $name;
+             $this->price = $price;
+             $this->brand = $brand;
+           }
+           
+           
+          abstract public function getDescriptionforProductType();
+           
+          protected $name;
+          protected $price;
+          protected $brand;
+          
+          
+          
+          
+          
+         public function provideDescription(){
+          return $this->getDescriptionforProductType();
+         }
+        
+        }
+        
+        
+        
+         class Clothing extends Product  {
+          protected $size,$color,$type,$gender;
+          
+           public function getDescriptionforProductType(){
+           return "This is an article of 
+            clothing.  It is a {$this->brand} {$this->color} {$this->gender} {$this->type} of size {$this->size}.  It costs {$this->price}";
+         }
+           
+          public function __construct($name,$price,$brand,$size,$color,$type,$gender){
+            parent::__construct($name,$price, $brand);
+            
+            
+            $this->size = $size;
+            $this->color = $color;
+            $this->type = $type;
+            $this->gender = $gender;
+          }
+        }
+        
+        
+         class Television extends Product {
+          protected $name,$price,$brand,$displayType,$size;
+          
+           public function getDescriptionforProductType(){
+           
+           return "This is a {$this->size} {$this->brand}
+          {$this->displayType} Television";
+          
+         }
+          
+          public function __construct($name,$price,$brand,$displayType,$size){
+            
+            parent::__construct($name,$price,$brand);
+            
+            $this->displayType = $displayType;
+            $this->size = $size;
+          }
+        }
+        
+        $buttondownshirt = new Clothing("Button Down Shirt", 29.98, "J Peterman",29,"Eye piercingly bright red", "Shirt", "Male");
+        echo $buttondownshirt->provideDescription();
+        
+        $giantTV = new Television("Giant TV",3900.90,"Kramerica","LED",100);
+        echo "<br />";
+        echo $giantTV->provideDescription();
+        
+        
         ?>
     </p>
   </body>

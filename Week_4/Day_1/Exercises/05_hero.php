@@ -40,7 +40,60 @@
     ///////////////////////////
     // Put your code here!
     ///////////////////////////
+    class LivingThing{
+        
+        public $name;
+        public $health;
+             function __construct($name, $health){
+         $this->name = $name;
+         $this->health = $health;   
+        }
+       
+        public function isAlive(){
+        return ($this->health > 0);
+        
+    }
+     public function getName(){
+        return $this->name;
+    }
+    
+    public function getHealth(){
+        return $this->health;
+    }
+    
+    
+    }
+    
+    
+    
+    class Hero extends LivingThing{
+        public function attack(LivingThing $obj){
+            $monstersrandom_attack = rand(1,10);
+            $monstersrandom_attack - $health;
+            echo " The monster did " . $monstersrandom_attack . " damage";
+            echo "<br />";
+            $herorandom_attack = mt_rand(1,10);
+            $herorandom_attack - $health;
+            echo "The hero did " . $herorandom_attack . " damage";
+            echo "<br />";
+        }
+        
+        public function fight(array $monsters){
+          foreach($monsters as $monster){
+              $this->attack($monster);
+          }
+        }
+        
+    }
+     $rat = new LivingThing("Rat", 5);
+    $goblin = new LivingThing("Goblin", 30);
+    $ogre = new LivingThing("Ogre", 80); 
 
+    $monsters = array($rat,$goblin,$ogre);
+    
+    
+    
+     $hero = new Hero("Scorpion",20);
 
     echo "<h3>A hero emerges!</h3>";
 
